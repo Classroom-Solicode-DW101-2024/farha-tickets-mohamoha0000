@@ -1,0 +1,78 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: #f4f4f4;
+}
+a{
+    text-decoration: none;
+    color: unset;
+    
+}
+header {
+    background: #55cc65;
+    color: white;
+    padding: 1rem;
+    text-align: center;
+}
+
+.profile {
+    max-width: 1000px;
+    margin: 20px auto;
+    padding: 20px;
+}
+
+.user-info, .purchases {
+    background: white;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+.user-info form div {
+    margin: 10px 0;
+}
+
+.user-info input {
+    padding: 5px;
+    width: 200px;
+}
+
+.user-info button {
+    background: #55cc65;
+    color: white;
+    padding: 8px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.user-info button:hover {
+    background: #3bcc4e;
+}
+
+.purchases table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.purchases th, .purchases td {
+    padding: 10px;
+    border: 1px solid #ddd;
+    text-align: left;
+}
+
+.purchases th {
+    background: #f0f0f0;
+}
+
+.purchases a {
+    color: #333;
+    text-decoration: none;
+    margin-right: 10px;
+}
+
+.purchases a:hover {
+    text-decoration: underline;
+}

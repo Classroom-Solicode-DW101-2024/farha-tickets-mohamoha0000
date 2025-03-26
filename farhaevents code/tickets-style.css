@@ -1,0 +1,70 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: #f4f4f4;
+}
+a{
+    text-decoration: none;
+    color: unset;
+    
+}
+header {
+    background:#55cc65;
+    color: white;
+    padding: 1rem;
+    text-align: center;
+}
+
+.tickets {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background: white;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+.event-info {
+    margin: 15px 0;
+    color: #666;
+}
+
+.ticket-list {
+    margin: 20px 0;
+}
+
+.ticket {
+    border: 1px solid #ddd;
+    padding: 15px;
+    margin-bottom: 15px;
+    border-radius: 5px;
+    background: #fafafa;
+}
+
+.ticket h3 {
+    margin: 0 0 10px 0;
+    color: #333;
+}
+
+.barcode {
+    margin-top: 10px;
+    padding: 10px;
+    background: #eee;
+    text-align: center;
+    font-family: monospace;
+}
+
+.back-btn {
+    display: inline-block;
+    background: #55cc65;
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-top: 20px;
+}
+
+.back-btn:hover {
+    background: #4edd61;
+}
