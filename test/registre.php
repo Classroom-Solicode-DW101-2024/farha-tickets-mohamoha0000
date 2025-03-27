@@ -24,8 +24,6 @@ if(isset($_POST['submit'])){
     }
 };
 
-
-
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -39,6 +37,7 @@ if(isset($_POST['submit'])){
         <div class="form-group">
             <label for="firstname">First Name</label>
             <input type="text" name="firstname" id="firstname" required>
+            <span>le nom est obligatoires</span>
         </div>
         <div class="form-group">
             <label for="lastname">Last Name</label>
