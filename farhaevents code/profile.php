@@ -1,5 +1,11 @@
 <?php
 require "config.php";
+
+if(isset($_POST["out"])){
+    session_destroy();
+    header("location:login.php");
+}
+
 if (!isset($_SESSION['user'])) {
     header("location:login.php");
 }
@@ -65,6 +71,7 @@ $reservations = $resaStmt->fetchAll(PDO::FETCH_ASSOC);
                     <input type="email" name="email" value="<?= $_SESSION['user']['mailUser'] ?>" required>
                 </div>
                 <button type="submit" name="update">Update</button>
+                <button style="background-color: red;" type="submit" name="out">log out</button>
             </form>
         </section>
         

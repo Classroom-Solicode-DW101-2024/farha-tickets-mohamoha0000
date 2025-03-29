@@ -16,13 +16,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $error = "Cet email est déjà utilisé";
         }
         
-        // Vérifier si le mot de passe existe déjà
-        $sql = "SELECT COUNT(*) FROM Utilisateur WHERE motPasse = :password";
-        $stmt = $pdo->prepare($sql);
-        $stmt->execute([':password' => $password]);
-        if ($stmt->fetchColumn() > 0) {
-            $error = "Ce mot de passe est déjà utilisé";
-        }
         
         if (!isset($error)) {
             // Générer un nouvel ID
