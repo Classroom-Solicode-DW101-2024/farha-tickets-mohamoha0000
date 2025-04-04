@@ -1,14 +1,21 @@
 <?php 
 require "config.php";
 
-$qury="select ev.eventTitle ,ed.dateEvent , ed.editionId , s.capSalle,
-  (select count(*) from billet b inner join reservation r
-  on b.idReservation= r.idReservation where r.editionId = ed.editionId) as tickets_sold
-  from evenement ev inner join edition ed on ev.eventId =ed.eventId
-  inner JOIN salle s ON ed.NumSalle = s.NumSalle
+// $qury="select ev.eventTitle ,ed.dateEvent , ed.editionId , s.capSalle,
+//   (select count(*) from billet b inner join reservation r
+//   on b.idReservation= r.idReservation where r.editionId = ed.editionId) as tickets_sold
+//   from evenement ev inner join edition ed on ev.eventId =ed.eventId
+//   inner JOIN salle s ON ed.NumSalle = s.NumSalle
+//   ";
+   
+  $qury="select ev.eventTitle ,ed.dateEvent , ed.editionId , s.capSalle, count(b.idReservation) as tickets_sold
+    from evenement ev inner join edition ed on ev.eventId =ed.eventId
+    inner JOIN salle s ON ed.NumSalle = s.NumSalle
+    LEFT JOIN reservation r ON ed.editionId = r.editionId
+    LEFT JOIN billet b ON r.idReservation = b.idReservation
+    group by ev.eventTitle,ed.dateEvent,ed.editionId, s.capSalle
+    ORDER BY ed.dateEvent ASC
   ";
-
-
   $stmt=$pdo->prepare($qury);
   $stmt->execute();
   $result=$stmt->fetchAll(PDO::FETCH_ASSOC);
